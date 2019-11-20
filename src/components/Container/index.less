@@ -1,0 +1,72 @@
+@import "~/src/theme";
+
+.container {
+    display: flex;
+    #theme(light);
+    &--dir {
+        &-row {
+            flex-direction: row;
+        }
+        &-column {
+            flex-direction: column;
+        }
+    }
+    &--pad {
+        &-l {
+            #sizing.pad(large);
+        }
+        &-m {
+            #sizing.pad(medium);
+        }
+        &-s {
+            #sizing.pad(small);
+        }
+    }
+    &--margin {
+        &-l {
+            #sizing.margin(large);
+        }
+        &-m {
+            #sizing.margin(medium);
+        }
+        &-s {
+            #sizing.margin(small);
+        }
+    }
+    &--border {
+        &-rounded {
+            // border-radius: 8px;
+            #theme.border.radius(0.5vmax);
+        }
+        &-semi {
+            #theme.border.radius(0.3vmax);
+            // border-radius: 3px;
+        }
+        &-square {
+            #theme.border.radius(0.15vmax);
+        }
+    }
+    &--elevate {
+        &- {
+            &0 {
+                #theme.elevate(0);
+            }
+            &1 {
+                #theme.elevate(1);
+            }
+            &-1 {
+                #theme.elevate(-1);
+            }
+            &2 {
+                #theme.elevate(2);
+            }
+            &-2 {
+                #theme.elevate(-2);
+            }
+        }
+    }
+    &--card {
+        border: none;
+    }
+
+}

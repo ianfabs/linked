@@ -1,0 +1,33 @@
+@import "theme";
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+}
+html, body, #app {
+    font-family: 'Alata', sans-serif;
+    font-size: 18px;
+    #theme(light);
+}
+
+h1 {font-size: 2.5rem;}
+h2 {font-size: 2.125rem;}
+h3 {font-size: 1.75rem;}
+h4 {font-size: 1.375rem;}
+h5 {font-size: 1.1rem;}
+
+h1,h2,h3,h4,h5 {
+    #theme(light);
+}
+
+span,text,div,p,article,section,footer,header,b,i,u,li {
+    font-size: 1rem;
+}
+
+.theme {
+    &--light {
+        #theme(light);
+    }
+}

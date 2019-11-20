@@ -1,0 +1,59 @@
+@sizes: {
+  mobile: 320px;
+  tablet: 768px;
+  desktop: 1024px;
+};
+
+#sizing {
+  @large: 2vmax;
+  @medium: 1vmax;
+  @small: 0.75vmax;
+  .pad(@size) {
+    padding-left: @@size;
+    padding-right: @@size;
+    padding-top: @@size;
+    padding-bottom: @@size;
+  }
+  .margin(@size) {
+    margin-left: @@size;
+    margin-right: @@size;
+    margin-top: @@size;
+    margin-bottom: @@size;
+  }
+}
+
+#theme {
+    .colors(dark) {
+        // Haven't decided yet
+    }
+    .colors(light) {
+        primary: #5BC0BE;
+        secondary: #3A506B;
+        white: #FFFCFC;
+        black: #060B18;
+        fg: $black;
+        bg: $white;
+    }
+    .border {
+        .radius(@n){
+            border-radius: @n;
+        }
+    }
+    .elevate(@n) {
+        box-shadow: if(
+            (@n > 0),
+            0px (2px*@n) (4px * @n) (-1px*@n) #theme.colors(light)[fg],
+            if(
+                (@n < 0),
+                inset 0px 0px abs(2px*@n) #theme.colors(light)[fg],
+                none
+            )
+        );
+    }
+}
+
+#theme(@theme) {
+    @colors: #theme.colors(light);
+    color: @colors[fg];
+    background: @colors[bg];
+}
