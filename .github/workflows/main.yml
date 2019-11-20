@@ -19,12 +19,13 @@ jobs:
         # An explicit key for restoring and saving the cache
         key: linked
     - name: ZEIT Now Deployment
+      id: "zeit"
       uses: amondnet/now-deployment@v1
       with:
         # zeit.co token
-        zeit-token: dLGKREHlK8segvcqVXatZYLc
+        zeit-token: ${{secrets.ZEIT_TOKEN}}
         now-args: '--prod'
-        github-token: e7d435464f98c7bb29e5aff0f17001ea23649ead
+        github-token: ${{secrets.git_token}}
         # if you want to create github deployment, set true, default: false
         githb-deployment: false
     - name: Display preview url
