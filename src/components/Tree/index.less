@@ -1,7 +1,81 @@
 @import "../../theme.less";
 
-.node {
-    &:nth-child(2n) {
-        background: lighten(#theme.colors(light)[fg], 60%);
+.tree,
+.leaf {
+  & .toggle {
+    cursor: pointer;
+  }
+  & .description {
+    font-style: italic;
+    font-size: 0.8rem;
+    position: relative;
+    left: 1vmax;
+  }
+}
+.tree {
+  & .toggle {
+    display: block;
+  }
+  & .content {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.25s ease-in-out;
+  }
+}
+
+#root > .node:nth-child(even) {
+  background: darken(#theme.colors(light) [white], 5%);
+}
+
+#root .tree .node:nth-child(odd) {
+  background: darken(#theme.colors(light) [white], 5%);
+}
+
+#root {
+  & > .node {
+    & .toggle {
+      padding-left: 0;
     }
+    & .node .toggle {
+      padding-left: 2vmax;
+    }
+  }
+}
+
+.node {
+  border-bottom: 1px solid black;
+  &:first-child {
+    border-top: 1px solid black;
+  }
+  & .toggle {
+    padding-top: 1vmin;
+    padding-bottom: 1vmin;
+    padding-right: 1vmin;
+    &:hover {
+      background: lighten(#theme.colors(light) [fg], 80%);
+    }
+    & > span:first-child {
+      margin-left: 2vmin;
+      display: flex;
+      flex-direction: row;
+      & .icon {
+        font-size: 1.4rem;
+        margin-right: 1vmin;
+        &--tree {
+          &::before {
+            content: "\21B5";
+          }
+          transform: rotateZ(180deg) rotateX(180deg);
+        }
+        &--leaf {
+          // transform: rotateZ(90deg);
+          &::before {
+            // content: "\26E2";
+            // content: "\26AC";
+            content: "\26AF";
+          }
+        }
+      }
+    }
+  }
 }

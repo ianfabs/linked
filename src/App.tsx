@@ -3,7 +3,8 @@ import Container from "./components/Container/Container";
 import Tree, {ILink} from "./components/Tree/Tree";
 
 const items: [ILink] = [
-  {title: "Google", uri: "https://google.com/"},
+  {title: "Google", uri: "https://google.com/", desc: "The world's most popular search engine."},
+  {title: "Ian Fabs ~ Portfolio", uri: "https://fabs.dev/", desc: "My personal Portfolio"},
   {title: "New Folder", items: [
     {title: "Bing", uri: "https://bing.com/"},
     {title: "DuckDuckGo", uri: "https://duckduckgo.com/"},
@@ -18,8 +19,8 @@ const App = props => {
         pad="s"
         margin="l"
         border="semi"
-        card
-        elevate={2}
+        dir="column"
+        card={true}
       >
         <span>Thank you for choosing linked</span>
         <span>Here's a list of items</span>

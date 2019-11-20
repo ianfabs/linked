@@ -2,7 +2,6 @@
 
 .container {
     display: flex;
-    #theme(light);
     &--dir {
         &-row {
             flex-direction: row;
@@ -46,6 +45,10 @@
             #theme.border.radius(0.15vmax);
         }
     }
+    &--card {
+        border: none;
+        #theme.elevate(1);
+    }
     &--elevate {
         &- {
             &0 {
@@ -65,8 +68,4 @@
             }
         }
     }
-    &--card {
-        border: none;
-    }
-
 }
